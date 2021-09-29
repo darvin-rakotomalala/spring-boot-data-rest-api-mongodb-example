@@ -1,4 +1,4 @@
-## Exemple Spring Boot Data MongoDB
+## Exemple Spring Boot Data MongoDB - CRUD
 Spring Data est un projet parapluie qui contient de nombreux sous-modules, chacun spécifique à une base de données particulière.
 Dans ce projet, nous couvrirons Spring Data MongoDB en créant une application qui stocke et récupère les données de MongoDB, 
 une base de données NoSQL basée sur des documents.<br/>
@@ -8,7 +8,7 @@ NoSQL MongoDB et des requêtes POST/GET/PUT/DELETE et des requêtes personnalis�
 
 ### Qu'est-ce que MongoDB ?
 ---
-MongoDB est une base de données NoSQL orientée document qui stocke des documents de type JSON 
+**MongoDB** est une base de données NoSQL orientée document qui stocke des documents de type JSON 
 avec des schémas dynamiques. Il est couramment utilisé pour le stockage de données à haut volume.
 
 ### Termes de la base de données NoSQL
@@ -40,6 +40,7 @@ Dans ce projet nous allons utiliser les dependances Maven suivants :<br/>
 ### Architecture technique
 ---
 Cette image présente l'architecture globale du projet.<br/><br/>
+![Archi_technique](https://user-images.githubusercontent.com/75081354/135291725-ce0ff30f-d992-4579-82ba-55c4da07505c.jpg)
 
 Le module au cœur du Spring Framework (Spring Core) repose fondamentalement sur un seul principe de conception objet : 
 l’inversion de contrôle.<br/>
@@ -59,13 +60,13 @@ et c'est le Framework qui s'occupe du code technique (Exigences Techniques).
 
 ### Annotations
 ---
-* @Document : Ceci marque la classe comme un objet de domaine qui sera persisté dans la base de données. Le nom de collection par défaut utilisé est le nom de la classe (premier caractère en minuscule).
-* @Id : Ceci marque le champ utilisé à des fins d'identité.
-* @Indexed(unique = true) : Ceci est appliqué au champ qui sera indexé avec une contrainte d'unique.
+* `@Document` : Ceci marque la classe comme un objet de domaine qui sera persisté dans la base de données. Le nom de collection par défaut utilisé est le nom de la classe (premier caractère en minuscule).
+* `@Id` : Ceci marque le champ utilisé à des fins d'identité.
+* `@Indexed(unique = true)` : Ceci est appliqué au champ qui sera indexé avec une contrainte d'unique.
 
 ### Tester les APIs REST
 ---
-`$ mvn spring-boot:run`<br/><br/>
+`$ mvn spring-boot:run`<br/>
 
 Pour tester les APIs vous pouvez utiliser Postman, Swagger, curl ou n'importe quel candidate HTTP :<br/>
 * POST `/api/candidates/add` - Enregistrer le détail candidat vers la base de données
@@ -79,8 +80,8 @@ Pour tester les APIs vous pouvez utiliser Postman, Swagger, curl ou n'importe qu
 * DELETE `/api/candidates/delete/{id}` - Supprimer un candidat existant de la base de données
 * DELETE ALL `/api/candidates/deleteall` - Supprimer tous les candidats de la base de données
 
-Une fois l'application lancer il faut vérifier que le swagger est UP en checkant l'url suivante : `http://localhost:8080/v3/api-docs`* <br/>
-Utilisez un client REST comme postman pour importer la collection des WS en utilisant url : `http://localhost:8080/v3/api-docs`*
+Une fois l'application lancer il faut vérifier que le swagger est UP en checkant l'url suivante : `http://localhost:8080/v3/api-docs` <br/>
+Utilisez un client REST comme postman pour importer la collection des WS en utilisant url : `http://localhost:8080/v3/api-docs`
 
 ### Conclusion
 ---
