@@ -85,5 +85,5 @@ Utilisez un client REST comme postman pour importer la collection des WS en util
 
 ### Conclusion
 ---
-Dans cet article, nous avons expliqué comment utiliser Spring Data MongoDB pour se connecter à un serveur MongoDB. 
-nous avons effectué une opération CRUD simple et écrit des requêtes personnalisées.		
+Dans ce projet, nous avons expliqué comment utiliser Spring Data MongoDB pour se connecter à un serveur MongoDB. 
+Nous avons effectué une opération CRUD simple et écrit des requêtes personnalisées.		
